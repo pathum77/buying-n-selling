@@ -1,0 +1,63 @@
+/* theme bg-color */
+.col-theme{
+    background-color: #D2042D;
+}
+
+/* main padding */
+.res-py{
+    padding: 0 50px;
+}
+
+/* margin between sec*/
+.mar-bet-sec{
+    margin: 50px 0;
+  }
+
+/* no padding-margin */
+.pad-mar-no{
+    padding: 0;
+    margin: 0;
+}
+
+/* 0.2s transition */
+.trans-low{
+    transition: .2s;
+}
+
+/* no text decoration */
+.a-txt-dec-no{
+    text-decoration: none;
+}
+
+/* display */
+.dis-fl{
+    display: flex;
+}
+
+.jus-con-sp-bt{
+    justify-content: space-between;
+}
+
+.jus-con-cen{
+    justify-content: center;
+}
+
+.al-it-cen{
+    align-items: center;
+}
+
+.f-sz-sm{
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 991px) {
+    .res-py{
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .res-py{
+        padding: 0 10px;
+    }
+}
