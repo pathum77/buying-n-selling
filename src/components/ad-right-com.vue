@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="main col-theme">
+        <div class="main col-theme dis-fl jus-con-sp-bt">
             
         </div>
     </div>
@@ -15,8 +15,16 @@ export default {
 <style scoped>
 
 .main{
-    min-width: 300px;
-    min-height: 500px;
+    width: 300px;
+    height: 500px;
+}
+
+@media only screen and (max-width: 767px) {
+    .main{
+        width: 100%;
+        height: 300px;
+        padding: 0 10px;
+    }
 }
     
 </style>

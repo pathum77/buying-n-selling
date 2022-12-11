@@ -1,19 +1,20 @@
 <template>
   <div>
     <Navi />
-    <div class="main res-py container-xxl">
-      <div class="con-1 mar-bet-sec">
+    <div class="main pad-mar-no container-xxl">
+      <div class="con-1">
         <MainBanner />
       </div>
-      <div class="con-2 mar-bet-sec">
+      <div class="con-2 mar-bet-sec res-py">
         <DailyDeals />
       </div>
-      <div class="con-3 dis-fl">
+      <div class="con-3 dis-fl res-py">
         <div class="le-wrapper">
           <div class="mar-bet-sec" id="pop-1">
-            <div class="dis-fl jus-con-sp-bt al-it-cen">
+            <div class="pop-hd dis-fl jus-con-sp-bt al-it-cen">
               <h2 class="popular-head">Popular in Autos in Sri Lanka</h2>
-              <router-link to="" class="a-txt-dec-no">Browse all Autos in Sri Lanka</router-link>
+              <router-link to="" class="pop-link a-txt-dec-no">Browse all Autos in Sri Lanka</router-link>
+              <router-link to="" class="pop-link-mob a-txt-dec-no">Browse all</router-link>
             </div>
             <div class="row g-3">
               <div v-for="(item, index) in pop1" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-6">
@@ -40,11 +41,10 @@
             <AdSmall />
           </div>
           <div class="mar-bet-sec" id="pop-2">
-            <div class="dis-fl jus-con-sp-bt al-it-cen">
+            <div class="pop-hd dis-fl jus-con-sp-bt al-it-cen">
               <h2 class="popular-head">Popular Buy & Sell in Sri Lanka</h2>
-              <router-link to="" class="a-txt-dec-no"
-                >Browse all Buy & Sell in Sri Lanka</router-link
-              >
+              <router-link to="" class="pop-link a-txt-dec-no">Browse all Buy & Sell in Sri Lanka</router-link>
+              <router-link to="" class="pop-link-mob a-txt-dec-no">Browse all</router-link>
             </div>
             <div class="row g-3">
               <div v-for="(item, index) in pop2" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-6">
@@ -75,11 +75,10 @@
             <a class="a-txt-dec-no trans-low" href="">Sign In</a>
           </div>
           <div class="mar-bet-sec" id="pop-3">
-            <div class="dis-fl jus-con-sp-bt al-it-cen">
-              <h2 class="popular-head">Popular in Real Estate in Sri Lanka</h2>
-              <router-link to="" class="a-txt-dec-no"
-                >Browse all Real Estate in Sri Lanka</router-link
-              >
+            <div class="pop-hd dis-fl jus-con-sp-bt al-it-cen">
+              <h2 class="popular-head">Popular Buy & Sell in Sri Lanka</h2>
+              <router-link to="" class="pop-link a-txt-dec-no">Browse all Buy & Sell in Sri Lanka</router-link>
+              <router-link to="" class="pop-link-mob a-txt-dec-no">Browse all</router-link>
             </div>
             <div class="row g-3">
               <div v-for="(item, index) in pop3" :key="index" class="col-lg-4 col-md-4 col-sm-6 col-6">
@@ -197,9 +196,33 @@ img {
   justify-content: flex-end;
 }
 
+.pop-link-mob{
+   display: none; 
+  }
+
 @media only screen and (max-width: 991px) {
   .con-3 {
     flex-direction: column;
   }
+
+  .ri-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .pop-hd{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pop-link{
+    display: none;
+  }
+
+  .pop-link-mob{
+    display: block;
+    margin-bottom: 10px;
+  }
 }
+
 </style>

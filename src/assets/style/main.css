@@ -50,10 +50,30 @@
     font-size: 13px;
 }
 
+.img-fit{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.dropdown-trans-enter-from,
+.dropdown-trans-leave-to {
+  opacity: 0;
+}
+
+.dropdown-trans-enter-active,
+.dropdown-trans-leave-active {
+  transition: all 400ms ease;
+}
+
+
 @media only screen and (max-width: 991px) {
     .res-py{
         padding: 0 30px;
     }
+
+    .mar-bet-sec{
+        margin: 40px 0;
+      }
 }
 
 @media only screen and (max-width: 767px) {

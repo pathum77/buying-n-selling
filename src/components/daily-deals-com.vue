@@ -101,8 +101,8 @@ h2 {
 }
 
 .btns img{
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 40%;
+  max-height: 40%;
 }
 
 .btns .left {
@@ -151,6 +151,10 @@ h2 {
 @media only screen and (max-width: 991px) {
   .items-wrapper {
     overflow: auto;
+  }
+
+  .btns {
+    display: none;
   }
 }
 

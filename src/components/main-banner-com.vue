@@ -1,6 +1,7 @@
 <template>
   <swiper
   :spaceBetween="30"
+  :loop="true"
     :centeredSlides="true"
     :autoplay="{
       delay: 2500,
@@ -8,6 +9,7 @@
     }"
     :pagination="{
       clickable: true,
+      dynamicBullets: true,
     }"
     :navigation="false"
     :modules="modules"
