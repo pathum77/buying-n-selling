@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="dis-fl jus-con-cen">
-      <div class="main col-theme"></div>
+      <div class="main col-theme dis-fl jus-con-cen al-it-cen">
+        <h5 style="color: white">Ad Small</h5>
+      </div>
     </div>
   </div>
 </template>

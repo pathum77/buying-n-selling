@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Navi />
     <div class="main pad-mar-no container-xxl">
+      <Navi />
       <div class="con-1">
         <MainBanner />
       </div>
@@ -22,12 +22,9 @@
                   <div>
                     <Pop>
                       <template v-slot:img>
-                        <img
-                          :src="
-                            require('../assets/home/pop1/' + item.image + '')
-                          "
-                          alt=""
-                        />
+                        <img :src="
+                          require('../assets/home/pop1/' + item.image + '')
+                        " alt="" />
                       </template>
                       <template v-slot:title>{{ item.name }}</template>
                     </Pop>
@@ -52,12 +49,9 @@
                   <div>
                     <Pop>
                       <template v-slot:img>
-                        <img
-                          :src="
-                            require('../assets/home/pop1/' + item.image + '')
-                          "
-                          alt=""
-                        />
+                        <img :src="
+                          require('../assets/home/pop1/' + item.image + '')
+                        " alt="" />
                       </template>
                       <template v-slot:title>{{ item.name }}</template>
                     </Pop>
@@ -86,12 +80,9 @@
                   <div>
                     <Pop>
                       <template v-slot:img>
-                        <img
-                          :src="
-                            require('../assets/home/pop1/' + item.image + '')
-                          "
-                          alt=""
-                        />
+                        <img :src="
+                          require('../assets/home/pop1/' + item.image + '')
+                        " alt="" />
                       </template>
                       <template v-slot:title>{{ item.name }}</template>
                     </Pop>
@@ -102,8 +93,22 @@
           </div>
         </div>
         <div class="ri-wrapper dis-fl">
-          <div class="mar-bet-sec">
-            <!-- right ad banner goes here -->
+          <div class="quick-links-wrapper">
+            <h5 class="">Popular on ^Kijiji^</h5><br>
+            <a href="" class="dis-fl jus-con-sp-bt al-it-cen a-txt-dec-no">
+              <p class="pad-mar-no">Free Stuff</p>
+              <img src="../assets/icons/forward-black.png" alt="">
+            </a>
+            <a href="" class="dis-fl jus-con-sp-bt al-it-cen a-txt-dec-no">
+              <p class="pad-mar-no">Wanted Ads</p>
+              <img src="../assets/icons/forward-black.png" alt="">
+            </a>
+            <a style="border: none" href="" class="dis-fl jus-con-sp-bt al-it-cen a-txt-dec-no">
+              <p class="pad-mar-no">Swap / Trade</p>
+              <img src="../assets/icons/forward-black.png" alt="">
+            </a>
+          </div>
+          <div class="ri-ad-box">
             <AdRight />
           </div>
         </div>
@@ -135,8 +140,14 @@ export default {
         { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
         { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
         { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
+        { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
+        { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
+        { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
       ],
       pop3: [
+        { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
+        { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
+        { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
         { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
         { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
         { name: "Cars & Trucks", image: "gtr.jpg", link: "/" },
@@ -156,6 +167,10 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  margin: 0 auto;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -193,12 +208,36 @@ img {
 
 .ri-wrapper {
   min-width: 350px;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.pop-link-mob{
-   display: none; 
-  }
+.quick-links-wrapper {
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.010);
+}
+
+.quick-links-wrapper a {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.050);
+  /* color: black; */
+}
+
+.quick-links-wrapper a img {
+  width: 12px;
+  height: 13px;
+}
+
+.ri-ad-box {
+  margin-top: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.pop-link-mob {
+  display: none;
+}
 
 @media only screen and (max-width: 991px) {
   .con-3 {
@@ -208,21 +247,44 @@ img {
   .ri-wrapper {
     min-width: 0;
     width: 100%;
+    margin-bottom: 50px;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .pop-hd{
+  .quick-links-wrapper {
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  .pop-hd {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .pop-link{
+  .pop-link {
     display: none;
   }
 
-  .pop-link-mob{
+  .pop-link-mob {
     display: block;
     margin-bottom: 10px;
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .ri-wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ri-ad-box {
+    width: 100%;
+    position: relative;
+  }
+
+  .quick-links-wrapper {
+    margin-right: 0;
+  }
+}
 </style>

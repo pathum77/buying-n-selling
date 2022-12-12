@@ -11,7 +11,7 @@
         <div class="main">
             <div class="pc-v dis-fl jus-con-sp-bt al-it-cen">
                 <button class="pad-mar-no f-sz-sm" v-for="(item, index) in items" :key="index"
-                    @click="openFilterOptions(index)">{{ item.name }}</button>
+                    @click="openFilterOptions(index)" :id="'fil-btn-'+index+''">{{ item.name }}</button>
             </div>
             <div class="mob-v">
                 <button class="pad-mar-no dis-fl al-it-cen" v-for="(item, index) in items" :key="index"
@@ -186,13 +186,13 @@ img {
 
 .pc-v button {
     border: none;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid transparent;
     background-color: transparent;
     font-weight: 500;
     transition: .4s;
 }
 
-.pc-v button:hover {
+.pc-v button:hover , .pc-v button:focus {
     border-bottom: 2px solid #D2042D;
 }
 

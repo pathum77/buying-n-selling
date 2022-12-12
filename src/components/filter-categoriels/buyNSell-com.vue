@@ -15,7 +15,9 @@
                     </div>
                     <div class="sub-category">
                         <a class="a-txt-dec-no" v-for="(item, index) in arts" :key="index" href="">{{ item.name }}</a>
-                        <div class="sub-cat-bg-img-box"></div>
+                        <div class="sub-cat-bg-img-box dis-fl">
+                            <img class="img-fit" src="../../assets/test/house.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -236,10 +238,9 @@ export default {
 }
 
 .sub-cat-bg-img-box{
-    width: 600px;
     height: 100%;
     opacity: .5;
-    background-color: rgb(255, 255, 0);
+    align-items: flex-end;
     position: absolute;
     right: 0;
 }

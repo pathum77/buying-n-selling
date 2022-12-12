@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { createWebHistory, createRouter } from 'vue-router'
 import Home from './views/home-scr.vue'
+import Items from './views/items-scr.vue'
 
 const routes = [
     {
@@ -9,6 +10,15 @@ const routes = [
         component: Home,
         meta: {
             title: 'Home'
+        }
+    },
+
+    {
+        name: 'Items',
+        path: '/items',
+        component: Items,
+        meta: {
+            title: 'Items'
         }
     },
 ];

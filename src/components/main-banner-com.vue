@@ -16,28 +16,45 @@
     class="mySwiper"
   >
     <swiper-slide>
-        <div class="banner-wrapper">
-            slider 1
+        <div class="banner-wrapper dis-fl jus-con-sp-bt">
+            <div class="le dis-fl">
+              <p class="header pad-mar-no">Up to 25% off</p>
+              <a href="" class="a-txt-dec-no dis-fl al-it-cen trans-low">
+                <p class="pad-mar-no">Buy it now</p>
+                <img src="../assets/icons/arrow_right.png" alt="">
+              </a>
+            </div>
+            <div class="ri dis-fl al-it-cen">
+              <img class="" src="../assets/banners/main-banner-1.png" alt="">
+            </div>
         </div>
     </swiper-slide>
     <swiper-slide>
-        <div class="banner-wrapper">
-            slider 2
+        <div class="banner-wrapper dis-fl jus-con-sp-bt">
+            <div class="le dis-fl">
+              <p class="header pad-mar-no">Up to 25% off</p>
+              <a href="" class="a-txt-dec-no dis-fl al-it-cen trans-low">
+                <p class="pad-mar-no">Buy it now</p>
+                <img src="../assets/icons/arrow_right.png" alt="">
+              </a>
+            </div>
+            <div class="ri dis-fl al-it-cen">
+              <img class="" src="../assets/banners/main-banner-1.png" alt="">
+            </div>
         </div>
     </swiper-slide>
     <swiper-slide>
-        <div class="banner-wrapper">
-            slider 3
-        </div>
-    </swiper-slide>
-    <swiper-slide>
-        <div class="banner-wrapper">
-            slider 4
-        </div>
-    </swiper-slide>
-    <swiper-slide>
-        <div class="banner-wrapper">
-            slider 5
+        <div class="banner-wrapper dis-fl jus-con-sp-bt">
+            <div class="le dis-fl">
+              <p class="header pad-mar-no">Up to 25% off</p>
+              <a href="" class="a-txt-dec-no dis-fl al-it-cen trans-low">
+                <p class="pad-mar-no">Buy it now</p>
+                <img src="../assets/icons/arrow_right.png" alt="">
+              </a>
+            </div>
+            <div class="ri dis-fl al-it-cen">
+              <img class="" src="../assets/banners/main-banner-1.png" alt="">
+            </div>
         </div>
     </swiper-slide>
   </swiper>
@@ -70,7 +87,7 @@ export default {
 </script>
 
 <style scoped>
-#app {
+/* #app {
   height: 100%;
 }
 html,
@@ -97,8 +114,6 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -118,11 +133,85 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
 .banner-wrapper{
     width: 100%;
     height: 300px;
-    background-color: yellow;
+    background-color: #ffc000;
 }
+
+.le{
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.le .header{
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.le a{
+  margin-top: 20px;
+  padding: 10px 5px;
+  border: 2px solid black;
+  color: black;
+}
+
+.le a img{
+  width: 20px;
+  height: 15px;
+  margin-left: 10px;
+}
+
+.ri{
+  width: 50%;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.ri img{
+  max-height: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+
+  .banner-wrapper{
+    height: 300px;
+  }
+
+  .banner-wrapper{
+    flex-direction: column;
+  }
+
+  .le{
+    width: 100%;
+    height: 100px;
+    padding: 5px 10px;
+  }
+
+  .le .header{
+    font-size: 25px;
+  }
+
+  .le a{
+    padding: 0;
+    margin-top: 5px;
+    border: none;
+  }
+
+  .ri{
+    width: 100%;
+    height: 200px;
+    align-items: flex-end;
+  }
+
+  .ri img{
+    max-width: 100%;
+  }
+}
+
 </style>
