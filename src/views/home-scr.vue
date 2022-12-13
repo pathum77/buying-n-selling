@@ -2,6 +2,7 @@
   <div>
     <div class="main pad-mar-no container-xxl">
       <Navi />
+      <Filter />
       <div class="con-1">
         <MainBanner />
       </div>
@@ -124,6 +125,7 @@ import AdSmall from "../components/ad-small-com.vue";
 import AdRight from "../components/ad-right-com.vue";
 import DailyDeals from "../components/daily-deals-com.vue";
 import MainBanner from "../components/main-banner-com.vue";
+import Filter from "../components/filter-com.vue";
 
 export default {
   data() {
@@ -162,6 +164,7 @@ export default {
     AdRight,
     DailyDeals,
     MainBanner,
+    Filter,
   },
 };
 </script>

@@ -108,14 +108,14 @@
         </transition>
       </div>
     </div>
-    <div class="filter">
+    <!-- <div class="filter">
       <Filter />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import Filter from "../components/filter-com.vue";
+// import Filter from "../components/filter-com.vue";
 export default {
   data() {
     return {
@@ -168,7 +168,7 @@ export default {
   },
 
   components: {
-    Filter,
+    // Filter,
   },
 
   mounted() {
@@ -393,11 +393,11 @@ export default {
   }
 }
 
-@media only screen and (max-width: 991px) {
+/* @media only screen and (max-width: 991px) {
   .filter{
     padding: 0;
   }
-}
+} */
 
 @media only screen and (max-width: 767px) {
   .register-hide , .select-filter-name , .icn-srch{
