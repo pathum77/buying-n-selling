@@ -143,9 +143,9 @@ export default {
 </script>
 
 <style scoped>
-/* .filter-wrp-sm {
+.filter-wrp-sm {
     display: none;
-} */
+}
 
 .main {
     min-height: 100vh;

@@ -23,35 +23,39 @@
             </div>
         </div>
         <div class="filter-popup-mob">
-            <div v-if="mainCatIsVisible" class="main-category-mob">
-                <div class="dis-fl jus-con-sp-bt al-it-cen">
-                    <h5 class="pad-mar-no">Buy & Sell</h5>
-                    <button class="btn-close" @click="mainClose()"></button>
-                </div>
-                <a class="f-sz-sm a-txt-dec-no" href="">See All in Buy & Sell</a><br>
-                <button class="btn-mob-cat pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
-                    v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
-                    <p class="pad-mar-no">{{ category.name }}</p>
-                    <img :class="category.hasSub ? 'icn-fo-arr' : 'icn-fo-arr-hide'"
-                        src="../../assets/icons/forward-black.png" alt="">
-                </button>
-            </div>
-            <div v-if="subCatIsVisible" class="sub-category-mob">
-                <div class="top dis-fl jus-con-sp-bt al-it-cen">
-                    <button class="btn-back pad-mar-no dis-fl al-it-cen" @click="subClose()">
-                        <img src="../../assets/icons/backward_theme.png" alt="">
-                        <p class="pad-mar-no">Back to Buy & Sell</p>
-                    </button>
-                    <button class="btn-close" @click="mainClose()"></button>
-                </div>
-                <div class="bot dis-fl">
-                    <h5>Audio</h5>
-                    <a href="" class="a-txt-dec-no">See All in Audio</a>
-                    <button class="dis-fl jus-con-sp-bt" v-for="(item, index) in arts" :key="index">
-                        <p class="pad-mar-no">{{ item.name }}</p>
+            <transition name="main-cat-trans">
+                <div v-if="mainCatIsVisible" class="main-category-mob">
+                    <div class="dis-fl jus-con-sp-bt al-it-cen">
+                        <h5 class="pad-mar-no">Buy & Sell</h5>
+                        <button class="btn-close" @click="mainClose()"></button>
+                    </div>
+                    <a class="f-sz-sm a-txt-dec-no" href="">See All in Buy & Sell</a><br>
+                    <button class="btn-mob-cat pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
+                        v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
+                        <p class="pad-mar-no">{{ category.name }}</p>
+                        <img :class="category.hasSub ? 'icn-fo-arr' : 'icn-fo-arr-hide'"
+                            src="../../assets/icons/forward-black.png" alt="">
                     </button>
                 </div>
-            </div>
+            </transition>
+            <transition name="sub-cat-trans">
+                <div v-if="subCatIsVisible" class="sub-category-mob">
+                    <div class="top dis-fl jus-con-sp-bt al-it-cen">
+                        <button class="btn-back pad-mar-no dis-fl al-it-cen" @click="subClose()">
+                            <img src="../../assets/icons/backward_theme.png" alt="">
+                            <p class="pad-mar-no">Back to Buy & Sell</p>
+                        </button>
+                        <button class="btn-close" @click="mainClose()"></button>
+                    </div>
+                    <div class="bot dis-fl">
+                        <h5>Audio</h5>
+                        <a href="" class="a-txt-dec-no">See All in Audio</a>
+                        <button class="dis-fl jus-con-sp-bt" v-for="(item, index) in arts" :key="index">
+                            <p class="pad-mar-no">{{ item.name }}</p>
+                        </button>
+                    </div>
+                </div>
+            </transition>
         </div>
     </div>
 </template>
@@ -152,7 +156,6 @@ export default {
 </script>
 
 <style scoped>
-
 .icn-fo-arr {
     width: 10px;
     height: 15px;
@@ -237,7 +240,7 @@ export default {
     z-index: 1;
 }
 
-.sub-cat-bg-img-box{
+.sub-cat-bg-img-box {
     height: 100%;
     opacity: .5;
     align-items: flex-end;
@@ -250,7 +253,7 @@ export default {
         top: 130px;
     }
 
-    .sub-cat-bg-img-box{
+    .sub-cat-bg-img-box {
         display: none;
     }
 }
@@ -280,6 +283,7 @@ export default {
         margin: auto;
         padding: 20px 10px 50px 10px;
         display: flex;
+        position: relative;
         flex-direction: column;
         background-color: white;
     }
@@ -288,6 +292,7 @@ export default {
         width: 700px;
         margin: auto;
         display: flex;
+        position: relative;
         flex-direction: column;
         background-color: white;
     }
@@ -325,4 +330,5 @@ export default {
         width: 100%;
     }
 }
+
 </style>

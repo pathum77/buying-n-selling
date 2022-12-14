@@ -164,6 +164,13 @@ export default {
 
         getVisible(value) {
             this.buyNSellIsVisible = value;
+            this.carsNVehiclesIsVisible = value;
+            this.realEstateisVIsible = value;
+            this.jobsIsVisible = value;
+            this.petsIsVisible = value;
+            this.servicesIsVisible = value;
+            this.communityIsVisible = value;
+            this.vacationRentalsIsVisible = value;
         }
     }
 }

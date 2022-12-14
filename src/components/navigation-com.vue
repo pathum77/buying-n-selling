@@ -3,7 +3,9 @@
     <div class="main res-py dis-fl jus-con-sp-bt container-xxl">
       <div class="le dis-fl">
         <div class="logo-box">
-          <img class="img-fit" src="../assets/test/logo.png" alt="" />
+          <a href="/">
+            <img class="img-fit" src="../assets/test/logo.png" alt="" />
+          </a>
         </div>
         <div class="search-location-full-dis dis-fl">
           <div class="srch-wrapper dis-fl al-it-cen">
@@ -39,10 +41,12 @@
             </button>
             <transition name="dropdown-trans">
               <div v-if="isLocationvisible" v-click- class="locations dis-fl">
-                <button v-for="(item, index) in locations" :key="index" @click="locationSelect(index)"
+                <div class="locations-wrapper">
+                  <button v-for="(item, index) in locations" :key="index" @click="locationSelect(index)"
                   class="f-sz-sm pad-mar-no">
                   {{ item }}
                 </button>
+                </div>
               </div>
             </transition>
           </div>
@@ -100,10 +104,12 @@
         </button>
         <transition name="dropdown-trans">
           <div v-if="isLocationvisible" v-click- class="locations dis-fl">
-            <button v-for="(item, index) in locations" :key="index" @click="locationSelect(index)"
-              class="f-sz-sm pad-mar-no">
-              {{ item }}
-            </button>
+            <div class="locations-wrapper">
+                  <button v-for="(item, index) in locations" :key="index" @click="locationSelect(index)"
+                  class="f-sz-sm pad-mar-no">
+                  {{ item }}
+                </button>
+                </div>
           </div>
         </transition>
       </div>
@@ -324,21 +330,40 @@ export default {
 .btn-location {
   height: 100%;
   font-weight: 500;
-
   border: none;
   background-color: transparent;
 }
 
 .locations {
   width: 130px;
+  height: 300px;
   flex-direction: column;
   justify-content: flex-end;
   position: absolute;
   z-index: 2;
+  background-color: red;
+}
+
+.locations-wrapper{
+  overflow: auto;
   background-color: rgb(241, 241, 241);
 }
 
-.locations button {
+.locations-wrapper::-webkit-scrollbar{
+  width: 5px;
+}
+
+.locations-wrapper::-webkit-scrollbar-thumb{
+  background: rgba(0, 0, 0, 0.137);
+  border-radius: 10px;
+}
+
+.locations-wrapper::-webkit-scrollbar-thumb:hover{
+  background: rgba(0, 0, 0, 0.212);
+}
+
+.locations-wrapper button {
+  width: 100%;
   padding: 8px 0;
   border: none;
   border-top: 1px solid white;
