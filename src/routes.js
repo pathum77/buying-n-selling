@@ -2,6 +2,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import Home from './views/home-scr.vue'
 import Items from './views/items-scr.vue'
+import Item from './views/item-scr.vue'
 
 const routes = [
     {
@@ -19,6 +20,15 @@ const routes = [
         component: Items,
         meta: {
             title: 'Items'
+        }
+    },
+
+    {
+        name: 'Item',
+        path: '/item',
+        component: Item,
+        meta: {
+            title: 'Item'
         }
     },
 ];
