@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 import Home from './views/home-scr.vue'
 import Items from './views/items-scr.vue'
 import Item from './views/item-scr.vue'
+import Bid from './views/bid-scr.vue'
 
 const routes = [
     {
@@ -29,6 +30,15 @@ const routes = [
         component: Item,
         meta: {
             title: 'Item'
+        }
+    },
+
+    {
+        name: 'Bid',
+        path: '/bid',
+        component: Bid,
+        meta: {
+            title: 'Bid'
         }
     },
 ];

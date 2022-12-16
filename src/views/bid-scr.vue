@@ -23,8 +23,63 @@
                     </div>
                     <div class="price-desc-wrapper">
                         <p class="item-name pad-mar-no">Huawei Nova 2i</p>
-                        <p class="pad-mar-no f-sz-sm">Posted on 16 Dec 11:51 am, Jaffna City</p><br>
-                        <p class="price pad-mar-no f-col-theme">Rs 100,000</p><br>
+                        <p class="pad-mar-no f-sz-sm">Posted on 16 Dec 11:51 am, Jaffna City</p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div style="display: flex; align-items: flex-end;">
+                                    <p style="padding-bottom: 3px;" class="pad-mar-no">Current Bid:</p>&nbsp;
+                                    <p class="price pad-mar-no f-col-theme">Rs 100,000</p>
+                                </div>
+                                <div style="display: flex; align-items: flex-end;">
+                                    <p style="padding-bottom: 2px;" class="pad-mar-no">Started from:</p>&nbsp;
+                                    <p class="current-bid-price pad-mar-no">Rs 100,000</p>
+                                    <p class="f-sz-sm">[10 bids]</p>
+                                </div><br>
+                                <button class="btn-place-bid pad-mar-no col-theme">Place a Bid</button><br><br>
+                                <div class="bid-inp-wrapper">
+                                    <label for="">Please enter your amount</label>
+                                    <input class="form-control" type="text" name="" id=""><br>
+                                    <button class="btn-place-bid pad-mar-no col-theme">Place Bid</button>
+                                </div><br>
+                            </div>
+                            <div class="bid-places-mob col-md-6">
+                                <div class="bid-places-wrapper">
+                                    <p class="top-bids-head">Top Bids</p><hr>
+                                    <div class="bid-place-box dis-fl jus-con-sp-bt">
+                                        <div class="icn-name-wrp dis-fl">
+                                            <div class="icn">
+                                                <img class="img-fit" src="../assets/icons/place-badge-1st.png" alt="">
+                                            </div>
+                                            <p class="name pad-mar-no">P*******</p>
+
+                                        </div>
+                                        <p class="bid-price">Rs 10,000</p>
+                                    </div>
+                                    <div class="bid-place-box dis-fl jus-con-sp-bt">
+                                        <div class="icn-name-wrp dis-fl">
+                                            <div class="icn">
+                                                <img class="img-fit" src="../assets/icons/place-badge-2nd.png" alt="">
+                                            </div>
+                                            <p class="name pad-mar-no">P*******</p>
+
+                                        </div>
+                                        <p class="bid-price">Rs 10,000</p>
+                                    </div>
+                                    <div class="bid-place-box dis-fl jus-con-sp-bt">
+                                        <div class="icn-name-wrp dis-fl">
+                                            <div class="icn">
+                                                <img class="img-fit" src="../assets/icons/place-badge-3rd.png" alt="">
+                                            </div>
+                                            <p class="name pad-mar-no">P*******</p>
+
+                                        </div>
+                                        <p class="bid-price">Rs 10,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
                         <p class="pad-mar-no">Condition: Used</p>
                         <p class="pad-mar-no">Model: iPhone 11</p>
                         <p class="pad-mar-no">Brand: Apple</p>
@@ -46,23 +101,41 @@
                         <p class="pad-mar-no"><b>About Seller</b></p>
                         <p>Pathum Madusanka</p>
                     </div>
-                    <button class="con-box pad-mar-no dis-fl">
-                        <div class="icon col-theme dis-fl jus-con-cen al-it-cen">
-                            <img src="../assets/icons/phone-white.png" alt="">
+                    <div class="bid-place-pc">
+                        <div class="bid-places-wrapper">
+                            <p class="top-bids-head">Top Bids</p><hr>
+                            <div class="bid-place-box dis-fl jus-con-sp-bt">
+                                <div class="icn-name-wrp dis-fl">
+                                    <div class="icn">
+                                        <img class="img-fit" src="../assets/icons/place-badge-1st.png" alt="">
+                                    </div>
+                                    <p class="name pad-mar-no">P*******</p>
+
+                                </div>
+                                <p class="bid-price">Rs 10,000</p>
+                            </div>
+                            <div class="bid-place-box dis-fl jus-con-sp-bt">
+                                <div class="icn-name-wrp dis-fl">
+                                    <div class="icn">
+                                        <img class="img-fit" src="../assets/icons/place-badge-2nd.png" alt="">
+                                    </div>
+                                    <p class="name pad-mar-no">P*******</p>
+
+                                </div>
+                                <p class="bid-price">Rs 10,000</p>
+                            </div>
+                            <div class="bid-place-box dis-fl jus-con-sp-bt">
+                                <div class="icn-name-wrp dis-fl">
+                                    <div class="icn">
+                                        <img class="img-fit" src="../assets/icons/place-badge-3rd.png" alt="">
+                                    </div>
+                                    <p class="name pad-mar-no">P*******</p>
+
+                                </div>
+                                <p class="bid-price">Rs 10,000</p>
+                            </div>
                         </div>
-                        <div class="content dis-fl jus-con-sp-bt">
-                            <p class="pad-mar-no">077XXXXXXXX</p>
-                            <p class="pad-mar-no f-sz-sm">Click to show phone number</p>
-                        </div>
-                    </button>
-                    <button class="con-box pad-mar-no dis-fl">
-                        <div class="icon col-theme dis-fl jus-con-cen al-it-cen">
-                            <img src="../assets/icons/chat-white.png" alt="">
-                        </div>
-                        <div class="content dis-fl jus-con-cen">
-                            <p class="pad-mar-no">Chat</p>
-                        </div>
-                    </button>
+                    </div>
                 </div>
             </div>
             <!-- <div class="img-preview-box">
@@ -78,16 +151,6 @@
                     </div>
                 </div>
             </div> -->
-        </div>
-        <div class="con-det-wrp-mob dis-fl jus-con-sp-bt al-it-cen">
-            <button class="dis-fl pad-mar-no col-theme al-it-cen jus-con-cen">
-                <img class="icn-phone" src="../assets/icons/phone-white.png" alt="">
-                <p class="pad-mar-no">Call</p>
-            </button>
-            <button class="dis-fl pad-mar-no col-theme al-it-cen jus-con-cen">
-                <img class="icn-chat" src="../assets/icons/chat-white.png" alt="">
-                <p class="pad-mar-no">Chat</p>
-            </button>
         </div>
     </div>
 </template>
@@ -152,7 +215,16 @@ export default {
 </script>
 
 <style scoped>
+
+.top-bids-head{
+    font-weight: 500;
+    font-size: 20px;
+}
 .seller-info-mob {
+    display: none;
+}
+
+.bid-places-mob{
     display: none;
 }
 
@@ -242,6 +314,15 @@ export default {
     padding-left: 20px;
 }
 
+.bid-place-box {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+}
+
+.bid-places-wrapper .icn-name-wrp .icn {
+    width: 30px;
+    height: 30px;
+}
+
 .con-det-wrapper .con-box {
     width: 100%;
     padding: 10px;
@@ -277,6 +358,15 @@ export default {
     font-size: 25px;
 }
 
+.price-desc-wrapper .current-bid-price {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.bid-inp-wrapper {
+    width: 250px;
+}
+
 .price-desc-wrapper .features {
     font-weight: 500;
 }
@@ -285,10 +375,26 @@ export default {
     display: none;
 }
 
+.btn-place-bid {
+    padding: 5px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
 @media only screen and (max-width: 991px) {
     .con-det-wrapper {
         padding: 0;
     }
+
+    .con-det-wrapper {
+        display: none;
+    }
+
+    .bid-places-mob{
+    display: block;
+}
 }
 
 @media only screen and (max-width: 767px) {
@@ -315,10 +421,6 @@ export default {
 
     .seller-info-mob {
         display: block;
-    }
-
-    .con-det-wrapper {
-        display: none;
     }
 
     .sub-images-wrapper {
