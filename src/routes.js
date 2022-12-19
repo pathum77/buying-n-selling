@@ -4,6 +4,7 @@ import Home from './views/home-scr.vue'
 import Items from './views/items-scr.vue'
 import Item from './views/item-scr.vue'
 import Bid from './views/bid-scr.vue'
+import Shop from './views/shop-scr.vue'
 
 const routes = [
     {
@@ -39,6 +40,15 @@ const routes = [
         component: Bid,
         meta: {
             title: 'Bid'
+        }
+    },
+
+    {
+        name: 'Shop',
+        path: '/shop',
+        component: Shop,
+        meta: {
+            title: 'Shop'
         }
     },
 ];

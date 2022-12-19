@@ -36,16 +36,20 @@
                                     <p class="current-bid-price pad-mar-no">Rs 100,000</p>
                                     <p class="f-sz-sm">[10 bids]</p>
                                 </div><br>
-                                <button class="btn-place-bid pad-mar-no col-theme">Place a Bid</button><br><br>
-                                <div class="bid-inp-wrapper">
-                                    <label for="">Please enter your amount</label>
-                                    <input class="form-control" type="text" name="" id=""><br>
-                                    <button class="btn-place-bid pad-mar-no col-theme">Place Bid</button>
-                                </div><br>
+                                <button v-if="!bidInputIsVisible" @click="bidInputVisible()"
+                                    class="btn-place-bid pad-mar-no col-theme">Place a Bid</button>
+                                <transition name="bid-input-trans">
+                                    <div v-if="bidInputIsVisible" class="bid-inp-wrapper">
+                                        <label for="">Please enter your amount</label>
+                                        <input class="form-control" type="text" name="" id=""><br>
+                                        <button class="btn-place-bid pad-mar-no col-theme">Place Bid</button>
+                                    </div>
+                                </transition>
                             </div>
                             <div class="bid-places-mob col-md-6">
                                 <div class="bid-places-wrapper">
-                                    <p class="top-bids-head">Top Bids</p><hr>
+                                    <p class="top-bids-head">Top Bids</p>
+                                    <hr>
                                     <div class="bid-place-box dis-fl jus-con-sp-bt">
                                         <div class="icn-name-wrp dis-fl">
                                             <div class="icn">
@@ -103,7 +107,8 @@
                     </div>
                     <div class="bid-place-pc">
                         <div class="bid-places-wrapper">
-                            <p class="top-bids-head">Top Bids</p><hr>
+                            <p class="top-bids-head">Top Bids</p>
+                            <hr>
                             <div class="bid-place-box dis-fl jus-con-sp-bt">
                                 <div class="icn-name-wrp dis-fl">
                                     <div class="icn">
@@ -176,6 +181,7 @@ export default {
                 { imgURL: 'house.png', isSelected: false },
             ],
             currentIndex: '',
+            bidInputIsVisible: false,
         }
     },
 
@@ -209,22 +215,26 @@ export default {
 
         imgNext() {
             document.getElementById("sub-imgs-wrp").scrollBy(400, 0);
+        },
+
+        bidInputVisible() {
+            this.bidInputIsVisible = !this.bidInputIsVisible;
         }
     },
 }
 </script>
 
 <style scoped>
-
-.top-bids-head{
+.top-bids-head {
     font-weight: 500;
     font-size: 20px;
 }
+
 .seller-info-mob {
     display: none;
 }
 
-.bid-places-mob{
+.bid-places-mob {
     display: none;
 }
 
@@ -253,7 +263,7 @@ export default {
     width: 100%;
     height: 400px;
     margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.11);
+    /* background-color: rgba(0, 0, 0, 0.11); */
 }
 
 .main-img-box img {
@@ -392,9 +402,9 @@ export default {
         display: none;
     }
 
-    .bid-places-mob{
-    display: block;
-}
+    .bid-places-mob {
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -459,5 +469,13 @@ export default {
         height: 24px;
         margin-right: 10px;
     }
+}
+
+.bid-input-trans-enter-from{
+    opacity: 0;
+}
+
+.bid-input-trans-enter-active{
+    transition: all .2s ease;
 }
 </style>
