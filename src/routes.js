@@ -5,6 +5,7 @@ import Items from './views/items-scr.vue'
 import Item from './views/item-scr.vue'
 import Bid from './views/bid-scr.vue'
 import Shop from './views/shop-scr.vue'
+import ProfilePersonal from './views/profile-personal-scr.vue'
 
 const routes = [
     {
@@ -49,6 +50,15 @@ const routes = [
         component: Shop,
         meta: {
             title: 'Shop'
+        }
+    },
+
+    {
+        name: 'Profile-Personal',
+        path: '/profile-personal',
+        component: ProfilePersonal,
+        meta: {
+            title: 'Profile Persoanl'
         }
     },
 ];

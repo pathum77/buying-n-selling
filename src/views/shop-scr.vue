@@ -7,8 +7,8 @@
                     <img src="../assets/test/cover-img-test.jpg" alt="">
                 </div>
                 <div class="pro-img-con dis-fl jus-con-cen">
-                    <div class="pro-img-box">
-                        <img src="" alt="">
+                    <div class="pro-img-box dis-fl jus-con-cen al-it-cen">
+                        <img class="" src="../assets/test/logo.png" alt="">
                     </div>
                 </div>
             </div>
@@ -20,13 +20,13 @@
                         <span class="membership pad-mar-no">MEMBER</span>
                         <p class="member-since pad-mar-no f-sz-sm">Member since june 2017</p>
                     </div>
-                    <div class="info-2 dis-fl al-it-cen">
+                    <div class="info-2 mob dis-fl al-it-cen">
                         <div class="icn">
                             <img class="img-fit" src="../assets/icons/phone-theme.png" alt="">
                         </div>
                         <p class="pad-mar-no">077XXXXXXX</p>
                     </div>
-                    <div class="info-2 dis-fl al-it-cen">
+                    <div class="info-2 cht dis-fl al-it-cen">
                         <div class="icn">
                             <img class="img-fit" src="../assets/icons/chat-theme.png" alt="">
                         </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="info-2 dis-fl">
                         <div class="icn">
-                            <img class="img-fit" src="../assets/icons/phone-theme.png" alt="">
+                            <img class="img-fit" src="../assets/icons/location-theme.png" alt="">
                         </div>
                         <p class="pad-mar-no">Gampaha, Sri Lanka.</p>
                     </div>
@@ -70,6 +70,16 @@
                         </div>
                     </a>
                 </div>
+                <div class="srch-sm">
+                    <div class="search-box dis-fl al-it-cen">
+                        <div class="inp-srch-box">
+                            <input type="text" name="" id="">
+                        </div>
+                        <button class="btn-srch-box pad-mar-no">
+                            <img src="../assets/icons/search-white.png" alt="">
+                        </button>
+                    </div>
+                </div>
                 <div class="items-wrp-sm">
                     <a v-for="(item, index) in displayItems" :key="index" href="" class="items-sm dis-fl a-txt-dec-no">
                         <img :src="require('../assets/test/' + item.image + '')" alt="">
@@ -85,6 +95,16 @@
                     </a>
                 </div>
             </div><br>
+            <div class="con-det-wrp-mob dis-fl jus-con-sp-bt al-it-cen">
+            <button class="dis-fl pad-mar-no col-theme al-it-cen jus-con-cen">
+                <img class="icn-phone" src="../assets/icons/phone-white.png" alt="">
+                <p class="pad-mar-no">Call</p>
+            </button>
+            <button class="dis-fl pad-mar-no col-theme al-it-cen jus-con-cen">
+                <img class="icn-chat" src="../assets/icons/chat-white.png" alt="">
+                <p class="pad-mar-no">Chat</p>
+            </button>
+        </div>
         </div>
     </div>
 </template>
@@ -119,6 +139,15 @@ export default {
 </script>
 
 <style scoped>
+
+.con-det-wrp-mob {
+    display: none;
+}
+
+.srch-sm {
+    display: none;
+}
+
 .cov-pro-img-wrp {
     width: 100%;
     /* height: 400px; */
@@ -150,6 +179,11 @@ export default {
     border: 2px solid #D2042D;
     border-radius: 50%;
     background-color: white;
+}
+
+.pro-img-box img {
+    max-width: 80%;
+    max-height: 80%;
 }
 
 .info-box {
@@ -268,17 +302,17 @@ export default {
     color: #D2042D;
 }
 
-.search-box{
+.search-box {
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.219);
     border-radius: 25px;
 }
 
-.search-box .inp-srch-box{
+.search-box .inp-srch-box {
     width: 100%;
 }
 
-.search-box .inp-srch-box input{
+.search-box .inp-srch-box input {
     width: 100%;
     height: 50px;
     padding: 20px;
@@ -287,16 +321,16 @@ export default {
     border: none;
 }
 
-.search-box .btn-srch-box{
+.search-box .btn-srch-box {
     width: 42px;
     height: 42px;
     margin-right: 5px;
     border-radius: 50%;
     border: none;
-    background-color: #D2042D ;
+    background-color: #D2042D;
 }
 
-.search-box .btn-srch-box img{
+.search-box .btn-srch-box img {
     max-width: 70%;
 }
 
@@ -323,7 +357,7 @@ export default {
 
 @media only screen and (max-width: 575px) {
 
-    .items-wrp-lg {
+    .items-wrp-lg , .mob , .cht {
         display: none;
     }
 
@@ -339,7 +373,6 @@ export default {
         -moz-column-gap: 10px;
         /* Firefox */
         column-gap: 10px;
-        width: 100vw;
     }
 
     .items-sm {
@@ -378,5 +411,42 @@ export default {
         font-weight: 300;
     }
 
+    .srch-sm {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .icn-phone {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .icn-chat {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .con-det-wrp-mob {
+        width: 100%;
+        height: 60px;
+        padding: 10px;
+        background-color: white;
+        border-top: 1px solid rgba(0, 0, 0, 0.151);
+        display: flex;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+    }
+
+    .con-det-wrp-mob button {
+        width: 49%;
+        height: 100%;
+        border: none;
+        border-radius: 5px;
+        font-weight: 900;
+        color: white;
+    }
 }
 </style>
