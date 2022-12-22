@@ -416,6 +416,10 @@ export default {
   .btn-srch-icon{
     display: none;
   }
+
+  .srch-wrapper {
+    margin-bottom: 10px;
+  }
 }
 
 /* @media only screen and (max-width: 991px) {
