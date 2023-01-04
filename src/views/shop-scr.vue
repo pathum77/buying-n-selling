@@ -8,7 +8,7 @@
                 </div>
                 <div class="pro-img-con dis-fl jus-con-cen">
                     <div class="pro-img-box dis-fl jus-con-cen al-it-cen">
-                        <img class="" src="../assets/test/logo.png" alt="">
+                        <img class="" src="../assets/test/sample-ad-2.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -179,11 +179,12 @@ export default {
     border: 2px solid #D2042D;
     border-radius: 50%;
     background-color: white;
+    overflow: hidden;
 }
 
 .pro-img-box img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .info-box {

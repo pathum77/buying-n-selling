@@ -6,6 +6,8 @@ import Item from './views/item-scr.vue'
 import Bid from './views/bid-scr.vue'
 import Shop from './views/shop-scr.vue'
 import ProfilePersonal from './views/profile-personal-scr.vue'
+import PostAd from './views/post-ad-scr.vue'
+import PostAdForm from './views/post-ad-form-scr.vue'
 
 const routes = [
     {
@@ -55,10 +57,28 @@ const routes = [
 
     {
         name: 'Profile-Personal',
-        path: '/profile-personal',
+        path: '/profile',
         component: ProfilePersonal,
         meta: {
             title: 'Profile Persoanl'
+        }
+    },
+
+    {
+        name: 'PostAd',
+        path: '/post-ad',
+        component: PostAd,
+        meta: {
+            title: 'Post ad'
+        }
+    },
+
+    {
+        name: 'PostAdForm',
+        path: '/post-ad-form',
+        component: PostAdForm,
+        meta: {
+            title: 'Post ad form'
         }
     },
 ];

@@ -61,7 +61,7 @@
           <a class="a-log-reg a-txt-dec-no" href="">Sign In</a>
         </div>
         <div>
-          <a class="a-post-ad a-txt-dec-no col-theme trans-low" href="">Post ad</a>
+          <router-link to="/post-ad" class="a-post-ad a-txt-dec-no col-theme trans-low">Post ad</router-link>
         </div>
       </div>
 
@@ -103,7 +103,7 @@
           <p class="pad-mar-no">{{ selectedLocation }}</p>
         </button>
         <transition name="dropdown-trans">
-          <div v-if="isLocationvisible" v-click- class="locations dis-fl">
+          <div v-if="isLocationvisible" class="locations dis-fl">
             <div class="locations-wrapper">
                   <button v-for="(item, index) in locations" :key="index" @click="locationSelect(index)"
                   class="f-sz-sm pad-mar-no">
@@ -126,7 +126,7 @@ export default {
   data() {
     return {
       isLocationvisible: false,
-      selectedLocation: "All of Sri Lanka",
+      selectedLocation: "",
       locations: [
         "All of Sri Lanka",
         "Colombo",
@@ -185,10 +185,10 @@ export default {
 
     getSelectedLocation() {
       if (localStorage.getItem("selectedLocation") === null) {
-        localStorage.setItem("selectedLocation", "All ofSri Lanka");
+        localStorage.setItem("selectedLocation", "All of Sri Lanka");
       } else {
         if (localStorage.getItem("selectedLocation") == "") {
-          localStorage.setItem("selectedLocation", "All ofSri Lanka");
+          localStorage.setItem("selectedLocation", "All of Sri Lanka");
         }
       }
       this.selectedLocation = localStorage.getItem("selectedLocation");

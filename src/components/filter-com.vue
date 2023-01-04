@@ -231,7 +231,7 @@ img {
     }
 
     .mob-v button {
-        min-width: 100px;
+        min-width: 80px;
         height: 100px;
         margin-right: 10px;
         border: none;
@@ -241,8 +241,8 @@ img {
     }
 
     .img-box {
-        min-width: 50px;
-        min-height: 50px;
+        width: 50px;
+        height: 50px;
         margin-bottom: 5px;
         border-radius: 50%;
         background-color: #d2042d11;
