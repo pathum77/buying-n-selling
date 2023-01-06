@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="pop-up" v-if="popUpIsVisible" @isVisible="getVisible">
+        <div class="pop-up" v-if="popUpIsVisible">
             <button class="btn-close" @click="popUpClose()"></button>
             <BuyNSell v-if="buySellIsVisible" @isVisible="getVisible" />
             <CarsNVehicles v-if="carsVehiclesIsVisible" @isVisible="getVisible" />
@@ -18,7 +18,7 @@
                         <img class="img-fit" src="../assets/test/logo.png" alt="" />
                     </router-link>
                 </div>
-                <p class="pad-mar-no">Post Ad</p>
+                <!-- <p class="pad-mar-no">Post Ad</p> -->
                 <button class="btn-close" @click="this.$router.push('/')"></button>
             </div>
             <div class="content">
@@ -125,6 +125,7 @@ export default {
 
     methods: {
         getVisible(value) {
+            this.popUpIsVisible = value;
             this.buySellIsVisible = value;
             this.carsNVehiclesIsVisible = value;
             this.realEstateisVIsible = value;
@@ -133,11 +134,17 @@ export default {
             this.servicesIsVisible = value;
             this.communityIsVisible = value;
             this.vacationRentalsIsVisible = value;
-            this.popUpIsVisible = value;
         },
 
         popUpClose() {
             this.popUpIsVisible = false;
+            this.carsNVehiclesIsVisible = false;
+            this.realEstateisVIsible = false;
+            this.jobsIsVisible = false;
+            this.petsIsVisible = false;
+            this.servicesIsVisible = false;
+            this.communityIsVisible = false;
+            this.vacationRentalsIsVisible = false;
             this.buySellIsVisible = false;
         }
     }
@@ -241,7 +248,7 @@ export default {
 }
 
 @media only screen and (max-width: 500px) {
-    .list-wrp{
+    .list-wrp {
         margin-top: 50px;
         display: block;
     }

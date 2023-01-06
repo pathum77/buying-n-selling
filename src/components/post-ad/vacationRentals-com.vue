@@ -5,7 +5,6 @@
                 <div class="category-wrapper dis-fl">
                     <div class="main-category">
                         <h5>Vacation Rentals</h5>
-                        <a class="a-txt-dec-no" href="">See All in Vacation Rentals</a><br><br>
                         <button class="pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                             v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                             <p class="pad-mar-no">{{ category.name }}</p>
@@ -14,8 +13,9 @@
                         </button><br>
                     </div>
                     <div class="sub-category">
-                        <a class="a-txt-dec-no" v-for="(item, index) in displaySub" :key="index" href="">{{ item.name
-}}</a>
+                        <a class="a-txt-dec-no" v-for="(item, index) in displaySub" :key="index" href="">{{
+                            item.name
+                        }}</a>
                         <div class="sub-cat-bg-img-box dis-fl">
                             <img class="img-fit" src="../../assets/test/house.png" alt="">
                         </div>
@@ -30,7 +30,6 @@
                         <h5 class="pad-mar-no">Vacation Rentals</h5>
                         <button class="btn-close" @click="mainClose()"></button>
                     </div>
-                    <a class="f-sz-sm a-txt-dec-no" href="">See All in Vacation Rentals</a><br>
                     <button class="btn-mob-cat pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                         v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                         <p class="pad-mar-no">{{ category.name }}</p>

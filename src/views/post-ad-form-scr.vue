@@ -11,46 +11,77 @@
                 <button class="btn-close" @click="this.$router.push('/')"></button>
             </div>
             <div class="content">
-                <h1 class="title">Phones in Buy & Sell</h1>
+                <h1 class="title">{{categorySub}} in {{categoryMain}}</h1>
                 <p class="sub-title f-sz-sm">Fill out the form below</p>
                 <div class="form">
-                    <!-- Type of animal -->
+                    <!-- district -->
                     <div class="sec">
+                        <label class="f-sz-sm" for="">District</label><br>
+                        <select class="form-control" name="" id="">
+                            <option value="Colombo">Colombo</option>
+                            <option value="Kandy">Kandy</option>
+                            <option value="Galle">Galle</option>
+                            <option value="Ampara">Ampara</option>
+                            <option value="Anuradhapura">Anuradhapura</option>
+                            <option value="Badulla">Badulla</option>
+                            <option value="Batticaloa">Batticaloa</option>
+                            <option value="Gampaha">Gampaha</option>
+                            <option value="Hambantota">Hambantota</option>
+                            <option value="Jaffna">Jaffna</option>
+                            <option value="Kalutara">Kalutara</option>
+                            <option value="Kegalle">Kegalle</option>
+                            <option value="Kilinochchi">Kilinochchi</option>
+                            <option value="Kurunegala">Kurunegala</option>
+                            <option value="Manner">Manner</option>
+                            <option value="Matale">Matale</option>
+                            <option value="Matara">Matara</option>
+                            <option value="Monaragala">Monaragala</option>
+                            <option value="Mullativu">Mullativu</option>
+                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                            <option value="Polonnaruwa">Polonnaruwa</option>
+                            <option value="Puttalam">Puttalam</option>
+                            <option value="Ratnapura">Ratnapura</option>
+                            <option value="Trincomalee">Trincomalee</option>
+                            <option value="Vavunia">Vavunia</option>
+                        </select>
+                    </div>
+                    <!-- Type of animal -->
+                    <div v-if="typeOfAnimal" class="sec">
                         <label class="f-sz-sm" for="">Type of animal</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">Bird</option>
                         </select>
                     </div>
                     <!-- property type -->
-                    <div class="sec">
+                    <div v-if="propertyType"  class="sec">
                         <label class="f-sz-sm" for="">Property type</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">Building</option>
                         </select>
                     </div>
                     <!-- Bedrooms -->
-                    <div class="sec">
+                    <div v-if="bedRooms"  class="sec">
                         <label class="f-sz-sm" for="">Bedrooms</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">1</option>
                         </select>
                     </div>
                     <!-- Bathrooms -->
-                    <div class="sec">
+                    <div v-if="bathRooms"  class="sec">
                         <label class="f-sz-sm" for="">Bathrooms</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">1</option>
                         </select>
                     </div>
                     <!-- Bike type -->
-                    <div class="sec">
+                    <div v-if="bikeType" class="sec">
                         <label class="f-sz-sm" for="">Bike type</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">cable</option>
                         </select>
                     </div>
                     <!-- land type -->
-                    <div class="sec">
+                    <div v-if="landType" class="sec">
                         <label class="f-sz-sm" for="">Land type</label><br>
                         <div class="row">
                             <div class="dis-fl col-lg-6">
@@ -72,7 +103,7 @@
                         </div>
                     </div>
                     <!-- condition -->
-                    <div class="sec">
+                    <div v-if="condition" class="sec">
                         <label class="f-sz-sm" for="">Condition</label><br>
                         <div class="row">
                             <div class="dis-fl col-lg">
@@ -86,7 +117,7 @@
                         </div>
                     </div>
                     <!-- condition recon-->
-                    <div class="sec">
+                    <div v-if="conditionRe" class="sec">
                         <label class="f-sz-sm" for="">Condition</label><br>
                         <div class="row">
                             <div class="dis-fl col-lg-6">
@@ -105,109 +136,109 @@
                         </div>
                     </div>
                     <!-- item type -->
-                    <div class="sec">
+                    <div v-if="itemType" class="sec">
                         <label class="f-sz-sm" for="">Item type</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">cable</option>
                         </select>
                     </div>
                     <!-- Land size -->
-                    <div class="sec">
+                    <div v-if="landSize" class="sec">
                         <label class="f-sz-sm" for="">Land size (perches)</label><br>
                         <input type="number" class="form-control" name="" id="">
                     </div>
                     <!-- house size -->
-                    <div class="sec">
+                    <div v-if="houseSize" class="sec">
                         <label class="f-sz-sm" for="">House size (sqft)</label><br>
                         <input type="number" class="form-control" name="" id="">
                     </div>
                     <!-- size -->
-                    <div class="sec">
+                    <div v-if="size" class="sec">
                         <label class="f-sz-sm" for="">Size (sqft)</label><br>
                         <input type="number" class="form-control" name="" id="">
                     </div>
                     <!-- Address -->
-                    <div class="sec">
+                    <div v-if="address" class="sec">
                         <label class="f-sz-sm" for="">Address (optional)</label><br>
                         <input type="text" class="form-control" name="" id="">
                     </div>
                     <!-- brand -->
-                    <div class="sec">
+                    <div v-if="brand" class="sec">
                         <label class="f-sz-sm" for="">Brand</label><br>
                         <input type="text" class="form-control" name="" id="">
                     </div>
                     <!-- model -->
-                    <div class="sec">
+                    <div v-if="model" class="sec">
                         <label class="f-sz-sm" for="">Model</label><br>
                         <input type="text" class="form-control" name="" id="">
                     </div>
                     <!-- title -->
-                    <div class="sec">
+                    <div v-if="title" class="sec">
                         <label class="f-sz-sm" for="">Title</label><br>
                         <input type="text" class="form-control" name="" id="">
                     </div>
                     <!-- screen size -->
-                    <div class="sec">
+                    <div v-if="screenSize" class="sec">
                         <label class="f-sz-sm" for="">Screen size (optional)</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">23</option>
                         </select>
                     </div>
                     <!-- Capacity -->
-                    <div class="sec">
+                    <div v-if="capacity" class="sec">
                         <label class="f-sz-sm" for="">Capacity (optional)</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">cable</option>
                         </select>
                     </div>
                     <!-- edition -->
-                    <div class="sec">
+                    <div v-if="edition" class="sec">
                         <label class="f-sz-sm" for="">Edition (optional)</label><br>
                         <input type="text" class="form-control" name="" id="">
                     </div>
                     <!-- Year of Manufacture -->
-                    <div class="sec">
+                    <div v-if="yearOfManufacture" class="sec">
                         <label class="f-sz-sm" for="">Year of Manufacture</label><br>
                         <input type="text" class="form-control" name="" id="">
                     </div>
                     <!-- Model year (km) -->
-                    <div class="sec">
+                    <div v-if="modelYear" class="sec">
                         <label class="f-sz-sm" for="">Model Year</label><br>
                         <input type="number" class="form-control" name="" id="">
                     </div>
                     <!-- Mileage (km) -->
-                    <div class="sec">
+                    <div v-if="mileage" class="sec">
                         <label class="f-sz-sm" for="">Mileage (km)</label><br>
                         <input type="text" class="form-control" name="" id="">
                     </div>
                     <!-- Engine capacity (cc) -->
-                    <div class="sec">
+                    <div v-if="engineCapacity"  class="sec">
                         <label class="f-sz-sm" for="">Engine capacity (cc)</label><br>
                         <input type="text" class="form-control" name="" id="">
                     </div>
                     <!-- Fuel type -->
-                    <div class="sec">
+                    <div v-if="fuelType" class="sec">
                         <label class="f-sz-sm" for="">Fuel type</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">cable</option>
                         </select>
                     </div>
                     <!-- Transmission -->
-                    <div class="sec">
+                    <div v-if="transmission" class="sec">
                         <label class="f-sz-sm" for="">Transmission</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">cable</option>
                         </select>
                     </div>
                     <!-- Body type (optional) -->
-                    <div class="sec">
+                    <div v-if="bodyType" class="sec">
                         <label class="f-sz-sm" for="">Body type (optional)</label><br>
                         <select class="form-control" name="" id="">
                             <option value="">cable</option>
                         </select>
                     </div>
                     <!-- features -->
-                    <div class="sec">
+                    <div v-if="features" class="sec">
                         <label class="f-sz-sm" for="">Features (optional)</label><br>
                         <div class="row">
                             <div class="col-lg">
@@ -289,15 +320,41 @@
 export default {
     data() {
         return {
+            categoryMain: this.$route.params.main,
+            categorySub: this.$route.params.sub,
             imgURL: null,
-            condition: true,
-            brand: true,
-            model: true,
-            edition: true,
-            features: true,
-            description: true,
-            price: true,
+            typeOfAnimal: false,
+            propertyType: false,
+            bedRooms: false,
+            bathRooms: false,
+            bikeType: false,
+            landType: false,
+            condition: false,
+            conditionRe: false,
+            itemType: false,
+            landSize: false,
+            houseSize: false,
+            size: false,
+            address: false,
+            brand: false,
+            model: false,
+            title: false,
+            screenSize: false,
+            capacity: false,
+            edition: false,
+            yearOfManufacture: false,
+            modelYear: false,
+            mileage: false,
+            engineCapacity: false,
+            fuelType: false,
+            transmission: false,
+            bodyType: false,
+            features: false,
         }
+    },
+
+    mounted() {
+        this.inpFieldVisible();
     },
 
     methods: {
@@ -305,6 +362,36 @@ export default {
             let file = this.$refs.file.files[0];
             this.imgURL = URL.createObjectURL(file);
             console.log(this.imgURL);
+        },
+
+        inpFieldVisible(){
+            this.$route.query.typeOfAnimal === 'true' ? this.typeOfAnimal = true : this.typeOfAnimal = false;
+            this.$route.query.propertyType === 'true' ? this.propertyType = true : this.propertyType = false;
+            this.$route.query.bedRooms === 'true' ? this.bedRooms = true : this.bedRooms = false;
+            this.$route.query.bathRooms === 'true' ? this.bathRooms = true : this.bathRooms = false;
+            this.$route.query.bikeType === 'true' ? this.bikeType = true : this.bikeType = false;
+            this.$route.query.landType === 'true' ? this.landType = true : this.landType = false;
+            this.$route.query.condition === 'true' ? this.condition = true : this.condition = false;
+            this.$route.query.conditionRe === 'true' ? this.conditionRe = true : this.conditionRe = false;
+            this.$route.query.itemType === 'true' ? this.itemType = true : this.itemType = false;
+            this.$route.query.landSize === 'true' ? this.landSize = true : this.landSize = false;
+            this.$route.query.houseSize === 'true' ? this.houseSize = true : this.houseSize = false;
+            this.$route.query.size === 'true' ? this.size = true : this.size = false;
+            this.$route.query.address === 'true' ? this.address = true : this.address = false;
+            this.$route.query.brand === 'true' ? this.brand = true : this.brand = false;
+            this.$route.query.model === 'true' ? this.model = true : this.model = false;
+            this.$route.query.title === 'true' ? this.title = true : this.title = false;
+            this.$route.query.screenSize === 'true' ? this.screenSize = true : this.screenSize = false;
+            this.$route.query.capacity === 'true' ? this.capacity = true : this.capacity = false;
+            this.$route.query.edition === 'true' ? this.edition = true : this.edition = false;
+            this.$route.query.yearOfManufacture === 'true' ? this.yearOfManufacture = true : this.yearOfManufacture = false;
+            this.$route.query.modelYear === 'true' ? this.modelYear = true : this.modelYear = false;
+            this.$route.query.mileage === 'true' ? this.mileage = true : this.mileage = false;
+            this.$route.query.engineCapacity === 'true' ? this.engineCapacity = true : this.engineCapacity = false;
+            this.$route.query.fuelType === 'true' ? this.fuelType = true : this.fuelType = false;
+            this.$route.query.transmission === 'true' ? this.transmission = true : this.transmission = false;
+            this.$route.query.bodyType === 'true' ? this.bodyType = true : this.bodyType = false;
+            this.$route.query.features === 'true' ? this.features = true : this.features = false;
         }
     }
 

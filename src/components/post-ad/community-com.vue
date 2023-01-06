@@ -4,8 +4,7 @@
             <div class="filter-popup-wrapper">
                 <div class="category-wrapper dis-fl">
                     <div class="main-category">
-                        <h5>Pets</h5>
-                        <a class="a-txt-dec-no" href="">See All in Pets</a><br><br>
+                        <h5>Community</h5>
                         <button class="pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                             v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                             <p class="pad-mar-no">{{ category.name }}</p>
@@ -27,10 +26,9 @@
             <transition name="main-cat-trans">
                 <div v-if="mainCatIsVisible" class="main-category-mob">
                     <div class="dis-fl jus-con-sp-bt al-it-cen">
-                        <h5 class="pad-mar-no">Pets</h5>
+                        <h5 class="pad-mar-no">Community</h5>
                         <button class="btn-close" @click="mainClose()"></button>
                     </div>
-                    <a class="f-sz-sm a-txt-dec-no" href="">See All in Pets</a><br>
                     <button class="btn-mob-cat pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                         v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                         <p class="pad-mar-no">{{ category.name }}</p>
@@ -44,7 +42,7 @@
                     <div class="top dis-fl jus-con-sp-bt al-it-cen">
                         <button class="btn-back pad-mar-no dis-fl al-it-cen" @click="subClose()">
                             <img src="../../assets/icons/backward_theme.png" alt="">
-                            <p class="pad-mar-no">Back to Pets</p>
+                            <p class="pad-mar-no">Back to Community</p>
                         </button>
                         <button class="btn-close" @click="mainClose()"></button>
                     </div>

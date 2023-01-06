@@ -5,7 +5,6 @@
                 <div class="category-wrapper dis-fl">
                     <div class="main-category">
                         <h5>Real Estate</h5>
-                        <a class="a-txt-dec-no" href="">See All in Real Estate</a><br><br>
                         <button class="pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                             v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                             <p class="pad-mar-no">{{ category.name }}</p>
@@ -14,8 +13,8 @@
                         </button><br>
                     </div>
                     <div class="sub-category">
-                        <a class="a-txt-dec-no" v-for="(item, index) in displaySub" :key="index" href="">{{ item.name
-                        }}</a>
+                        <button class="a-txt-dec-no" v-for="(item, index) in displaySub" :key="index" @click="subCategorySelect(index)">{{ item.name
+                        }}</button>
                         <div class="sub-cat-bg-img-box dis-fl">
                             <img class="img-fit" src="../../assets/test/house.png" alt="">
                         </div>
@@ -30,7 +29,6 @@
                         <h5 class="pad-mar-no">Real Estate</h5>
                         <button class="btn-close" @click="mainClose()"></button>
                     </div>
-                    <a class="f-sz-sm a-txt-dec-no" href="">See All in Real Estate</a><br>
                     <button class="btn-mob-cat pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                         v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                         <p class="pad-mar-no">{{ category.name }}</p>
@@ -72,23 +70,21 @@ export default {
             categories: [
                 { name: 'For Rent', hasSub: true, id: 'forRent' },
                 { name: 'For Sale', hasSub: true, id: 'forSale' },
-                { name: 'Real Estate Services', hasSub: false, link: '/' },
+                { name: 'Real Estate Services', hasSub: false, link: '/post-ad/Real Estate/Real Estate Services', title: true },
             ],
 
             forRent: [
-                { name: 'See All in For Rent', link: '/' },
-                { name: 'Long Term Rentals', link: '/' },
-                { name: 'Short Term Rentals', link: '/' },
-                { name: 'Room Rentals & Roommates', link: '/' },
-                { name: 'Storage & Parking for Rent', link: '/' },
-                { name: 'Commercial & Office Space for Rent', link: '/' },
+                { name: 'Long Term Rentals', link: '/post-ad/Real Estate/For Rent - Long Term Rentals', title: true },
+                { name: 'Short Term Rentals', link: '/post-ad/Real Estate/For Rent - Short Term Rentals', title: true },
+                { name: 'Room Rentals & Roommates', link: '/post-ad/Real Estate/For Rent - Room Rentals & Roommates', bedRooms: true, bathRooms: true, size: true, address: true, title: true },
+                { name: 'Storage & Parking for Rent', link: '/post-ad/Real Estate/For Rent - Storage & Parking for Rent', size: true, title: true, address: true },
+                { name: 'Commercial & Office Space for Rent', link: '/post-ad/Real Estate/For Rent - Commercial & Office Space for Rent', size: true, title: true, address: true },
             ],
 
             forSale: [
-                { name: 'See All in For Sale', link: '/' },
-                { name: 'Houses for Sale', link: '/' },
-                { name: 'Land for Sale', link: '/' },
-                { name: 'Commercial & Office Space for Sale', link: '/' },
+                { name: 'Houses for Sale', link: '/post-ad/Real Estate/For Sale - Houses for Sale', bedRooms: true, bathRooms: true, houseSize: true, address: true, title: true },
+                { name: 'Land for Sale', link: '/Real Estate/For Sale - Land for Sale', address: true, title: true, landSize: true },
+                { name: 'Commercial & Office Space for Sale', link: '/Real Estate/For Sale - Commercial & Office Space for Sale', size: true, title: true, address: true },
             ],
         }
     },
@@ -119,9 +115,13 @@ export default {
                 this.subCatIsVisible = true;
                 this.selectedCat = this.categories[index].name;
             } else {
-                this.$router.push(this.categories[index].link)
+                this.$router.push({ path: this.categories[index].link, query: this.categories[index] });
             }
         },
+
+        subCategorySelect(index){
+            this.$router.push({ path: this.displaySub[index].link, query: this.displaySub[index] });
+        }
     },
 
 }
@@ -213,10 +213,12 @@ export default {
     position: relative;
 }
 
-.sub-category a {
+.sub-category button {
     margin: 8px 0;
     color: black;
     z-index: 1;
+    border: none;
+    background-color: transparent;
 }
 
 .sub-cat-bg-img-box {

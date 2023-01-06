@@ -5,7 +5,6 @@
                 <div class="category-wrapper dis-fl">
                     <div class="main-category">
                         <h5>Pets</h5>
-                        <a class="a-txt-dec-no" href="">See All in Pets</a><br><br>
                         <button class="pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                             v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                             <p class="pad-mar-no">{{ category.name }}</p>
@@ -30,7 +29,6 @@
                         <h5 class="pad-mar-no">Pets</h5>
                         <button class="btn-close" @click="mainClose()"></button>
                     </div>
-                    <a class="f-sz-sm a-txt-dec-no" href="">See All in Pets</a><br>
                     <button class="btn-mob-cat pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                         v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                         <p class="pad-mar-no">{{ category.name }}</p>

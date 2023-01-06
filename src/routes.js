@@ -75,7 +75,7 @@ const routes = [
 
     {
         name: 'PostAdForm',
-        path: '/post-ad-form',
+        path: '/post-ad/:main/:sub',
         component: PostAdForm,
         meta: {
             title: 'Post ad form'

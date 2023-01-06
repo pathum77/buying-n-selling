@@ -5,7 +5,6 @@
                 <div class="category-wrapper dis-fl">
                     <div class="main-category">
                         <h5>Cars & Vehicles</h5>
-                        <a class="a-txt-dec-no" href="">See All in Cars & Vehicles</a><br><br>
                         <button class="pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                             v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                             <p class="pad-mar-no">{{ category.name }}</p>
@@ -14,8 +13,8 @@
                         </button><br>
                     </div>
                     <div class="sub-category">
-                        <a class="a-txt-dec-no" v-for="(item, index) in displaySub" :key="index" href="">{{ item.name
-                        }}</a>
+                        <button class="a-txt-dec-no" v-for="(item, index) in displaySub" :key="index" @click="subCategorySelect(index)">{{ item.name
+                        }}</button>
                         <div class="sub-cat-bg-img-box dis-fl">
                             <img class="img-fit" src="../../assets/test/house.png" alt="">
                         </div>
@@ -30,7 +29,6 @@
                         <h5 class="pad-mar-no">Cars & Vehicles</h5>
                         <button class="btn-close" @click="mainClose()"></button>
                     </div>
-                    <a class="f-sz-sm a-txt-dec-no" href="">See All in Cars & Vehicles</a><br>
                     <button class="btn-mob-cat pad-mar-no dis-fl jus-con-sp-bt al-it-cen"
                         v-for="(category, index) in categories" :key="index" @click="CategorySelect(index)">
                         <p class="pad-mar-no">{{ category.name }}</p>
@@ -70,46 +68,43 @@ export default {
             selectedCat: '',
             displaySub: [],
             categories: [
-                { name: 'Cars', hasSub: false, link: '/' },
-                { name: 'Three Wheelers', hasSub: false, link: '/' },
-                { name: 'Vans', hasSub: false, link: '/' },
-                { name: 'Lorries', hasSub: false, link: '/' },
-                { name: 'Auto Accessories', hasSub: true, id: 'vehicleParts' },
-                { name: 'Automotive Services', hasSub: true, id: 'services' },
-                { name: 'Motorbikes', hasSub: false, },
-                { name: 'Bicycles', hasSub: false, link: '/' },
-                { name: 'Boats & Watercraft', hasSub: false, },
-                { name: 'Rentals', hasSub: false, link: '/' },
-                { name: 'Buses', hasSub: false, link: '/' },
-                { name: 'RVs, Campers & Trailers', hasSub: false, },
-                { name: 'Heavy Equipments', hasSub: true, id: 'heavy' },
-                { name: 'Other', hasSub: false, link: '/' },
+                { name: 'Cars', hasSub: false, link: '/post-ad/Cars & Vehicles/Cars', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true  },
+                { name: 'Three Wheelers', hasSub: false, link: '/post-ad/Cars & Vehicles/Three Wheelers', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Vans', hasSub: false, link: '/post-ad/Cars & Vehicles/Vans', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Lorries', hasSub: false, link: '/post-ad/Cars & Vehicles/Lorries', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Auto Accessories', hasSub: true, id: 'vehicleParts', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Automotive Services', hasSub: true, id: 'services', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Motorbikes', hasSub: false, link: '/post-ad/Cars & Vehicles/Motorbikes', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Bicycles', hasSub: false, link: '/post-ad/Cars & Vehicles/Bicycles', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Boats & Watercraft', hasSub: false, link: '/post-ad/Cars & Vehicles/Boats & Watercraft', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Rentals', hasSub: false, link: '/post-ad/Cars & Vehicles/Rentals', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Buses', hasSub: false, link: '/post-ad/Cars & Vehicles/Buses', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'RVs, Campers & Trailers', hasSub: false, link: '/post-ad/Cars & Vehicles/RVs, Campers & Trailers', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Heavy Equipments', hasSub: true, id: 'heavy', conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
+                { name: 'Other', hasSub: false, link: '/post-ad/Cars & Vehicles/Other',conditionRe: true, brand: true, model: true, edition: true, yearOfManufacture: true, mileage: true, engineCapacity: true, fuelType: true, transmission: true },
             ],
 
             vehicleParts: [
-                { name: 'See All in Vehicle Parts, Tires & Accessories', link: '/' },
-                { name: 'Audio & GPS', link: '/' },
-                { name: 'Auto Body Parts', link: '/' },
-                { name: 'Engine & Engine Parts', link: '/' },
-                { name: 'Tires & Rims', link: '/' },
-                { name: 'Other Parts & Accessories', link: '/' },
+                { name: 'Audio & GPS', link: '/post-ad/Cars & Vehicles/Vehicle Parts - Audio & GPS', title: true, conditionRe: true },
+                { name: 'Auto Body Parts', link: '/post-ad/Cars & Vehicles/Vehicle Parts - Auto Body Parts', title: true, conditionRe: true },
+                { name: 'Engine & Engine Parts', link: '/post-ad/Cars & Vehicles/Vehicle Parts - Engine & Engine Parts', title: true, conditionRe: true },
+                { name: 'Tires & Rims', link: '/post-ad/Cars & Vehicles/Vehicle Parts - Tires & Rims', title: true, conditionRe: true },
+                { name: 'Other Parts & Accessories', link: '/post-ad/Cars & Vehicles/Vehicle Parts - Other Parts & Accessories', title: true, conditionRe: true },
             ],
 
             services: [
-                { name: 'See All in Automotive Services', link: '/' },
-                { name: 'Auto Insurance & Financing', link: '/' },
-                { name: 'Detailing & Cleaning', link: '/' },
-                { name: 'Repairs & Maintenance', link: '/' },
-                { name: 'Towing & Scrap Removal', link: '/' },
-                { name: 'Other', link: '/' },
+                { name: 'Auto Insurance & Financing', link: '/post-ad/Cars & Vehicles/Services - Auto Insurance & Financing', title: true },
+                { name: 'Detailing & Cleaning', link: '/post-ad/Cars & Vehicles/Services - Detailing & Cleaning', title: true },
+                { name: 'Repairs & Maintenance', link: '/post-ad/Cars & Vehicles/Services - Repairs & Maintenance', title: true },
+                { name: 'Towing & Scrap Removal', link: '/post-ad/Cars & Vehicles/Services - Towing & Scrap Removal', title: true },
+                { name: 'Other', link: '/post-ad/Cars & Vehicles/Services - Other', title: true },
             ],
 
             heavy: [
-                { name: 'See All in Heavy Equipment', link: '/' },
-                { name: 'Farming Equipment', link: '/' },
-                { name: 'Heavy Equipment', link: '/' },
-                { name: 'Heavy Trucks', link: '/' },
-                { name: 'Other', link: '/' },
+                { name: 'Farming Equipment', link: '/post-ad/Cars & Vehicles/Heavy - Farming Equipment', title: true, conditionRe:true  },
+                { name: 'Heavy Equipment', link: '/post-ad/Cars & Vehicles/Heavy - Heavy Equipment', title: true, conditionRe:true },
+                { name: 'Heavy Trucks', link: '/post-ad/Cars & Vehicles/Heavy - Heavy Trucks', brand: true, model: true, edition: true, conditionRe: true, title: true },
+                { name: 'Other', link: '/post-ad/Cars & Vehicles/Heavy - Other', title: true, conditionRe:true },
             ],
         }
     },
@@ -143,9 +138,13 @@ export default {
                 this.subCatIsVisible = true;
                 this.selectedCat = this.categories[index].name;
             } else {
-                this.$router.push(this.categories[index].link)
+                this.$router.push({ path: this.categories[index].link, query: this.categories[index] });
             }
         },
+
+        subCategorySelect(index){
+            this.$router.push({ path: this.displaySub[index].link, query: this.displaySub[index] });
+        }
     },
 
 }
@@ -237,10 +236,12 @@ export default {
     position: relative;
 }
 
-.sub-category a {
+.sub-category button {
     margin: 8px 0;
     color: black;
     z-index: 1;
+    border: none;
+    background-color: transparent;
 }
 
 .sub-cat-bg-img-box {
